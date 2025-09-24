@@ -1,0 +1,7 @@
+spring:
+  config:
+    name: xcode-dev-tech
+  application:
+    name: xcode-dev-tech
+  profiles:
+    active: dev
