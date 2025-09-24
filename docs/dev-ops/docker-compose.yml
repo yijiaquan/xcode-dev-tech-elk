@@ -17,7 +17,6 @@ services:
       - ./elasticsearch/01/logs:/usr/share/elasticsearch/logs
       - ./elasticsearch/01/config/elasticsearch.yml:/usr/share/elasticsearch/config/elasticsearch.yml
     environment:
-      - 'cluster.name=elasticsearch' # 设置集群名称为elasticsearch
       - 'discovery.type=single-node' # 以单一节点模式启动
       - "cluster.name=docker-cluster" # 设置名称
       - 'ES_JAVA_OPTS=-Xms512m -Xmx512m' # 设置使用jvm内存大小

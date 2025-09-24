@@ -55,6 +55,18 @@ mvn spring-boot:run
          "number_of_replicas": "0"
         }
     }
+    
+   curl -X PUT "http://ip:9200/_all/_settings" -H "Content-Type: application/json" -d '
+    {
+      "index.number_of_replicas": 0
+    }'
+   curl -X PUT "http://ip:9200/_template/sw_template" -H "Content-Type: application/json" -d '
+    {
+      "index_patterns": "sw_*",
+      "settings": {
+        "number_of_replicas": 0
+      }
+    }'
     ```
 - Logstash 配置在 `docs/dev-ops/logstash/logstash.conf`
 - 应用日志配置在 `xcode-dev-tech-app/src/main/resources/logback-spring.xml`
